@@ -31,3 +31,47 @@
     transform: rotate(360deg);
   }
 }
+
+.statyContener{
+  padding: 10px;
+}
+.statInput{
+  width: 40px;
+}
+.longText {
+  width: 20vw;
+  text-align: center;
+  justify-content: center;
+  padding: 0px 5px;
+  
+}
+
+.shortText {
+  width: 5vw;
+  text-align: center;
+  justify-content: center;
+  padding: 0px 5px;
+}
+.mediumText {
+  width: 10vw;
+  text-align: center;
+  justify-content: center;
+  padding: 0px 5px;
+}
+
+.dataHeader{
+  display: flex;
+  justify-content: center;
+}
+
+.buttonRng{
+  width: 20vw;
+  height: 5vh;
+  margin-top: 3vh;
+  margin-left: 40vw;
+  background-color: red;
+  color: aliceblue;
+  font-weight: bolder;
+  border: 2px solid black;
+
+}
