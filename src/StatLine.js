@@ -11,6 +11,7 @@ const statLine = (props)=> {
         <Staty name="Spryt" value={props.sp} /> 
         <Staty name="Charakter" value={props.ch} />
         </div>
+      
     )}
 
 

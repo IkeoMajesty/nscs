@@ -45,9 +45,9 @@ export const choroba = (props)=> {
     return ["Zapalenie płuc", "Gorączka SN", "PGK", "Mount Rushmore", "Syndrom Obcego", "Chore Nery", "Alergie", "Szaleństwo Bostońskie", "Syndrom Thurmana", "Drgawki", "Drętwota Hollywood", "Osteoporoza", "Zawroty Głowy", "Niewydolność krązenia", "Anemia", "Morbus Dexteri", "Syndrom Draculi", "VTDS", "Zdrowy"].rngsus()
 };
 export const d20avfrom3 = (props)=> {
-    const d201 = Math.floor(((Math.random()*20)+1));
-    const d202 = Math.floor(((Math.random()*20)+1));
-    const d203 = Math.floor(((Math.random()*20)+1));
+    const d201 = Math.floor(((Math.random()*15)+6));
+    const d202 = Math.floor(((Math.random()*15)+6));
+    const d203 = Math.floor(((Math.random()*15)+6));
     return (Math.floor((d201+d202+d203)/3))
 };
 
