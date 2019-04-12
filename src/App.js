@@ -81,8 +81,8 @@ class App extends Component {
        </div>
        <div className="dataHeader">
        <Text type="shortText" name="Wiek" id="wiek" change={this.manualInput} value={this.state.basic.wiek} /> 
-       <Text type="shortText" name="Wzrost" id="wzrost" change={this.manualInput} value={this.state.basic.wzrost}/> 
-       <Text type="shortText" name="Waga" id="waga" change={this.manualInput} value={this.state.basic.waga} /> 
+       <Text type="mediumText" name="Wzrost" id="wzrost" change={this.manualInput} value={this.state.basic.wzrost}/> 
+       <Text type="mediumText" name="Waga" id="waga" change={this.manualInput} value={this.state.basic.waga} /> 
        <Text type="mediumText" name="Oczy" id="oczy" change={this.manualInput} value={this.state.basic.oczy} /> 
        <Text type="mediumText" name="Wlosy" id="wlosy" change={this.manualInput} value={this.state.basic.wlosy} /> 
        <Text type="mediumText" name="Spec." id="spec" change={this.manualInput}value={this.state.basic.spec}/> 

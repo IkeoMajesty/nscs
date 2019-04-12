@@ -21,12 +21,12 @@ export const wiek = (props)=> {
     return Math.floor(((Math.random()*30))+18)
 };
 export const wzrost = (props)=> {
-
-    return Math.floor(((Math.random()*50))+140)
+    return ["Olbrzym", "Wysoki", "Sredni", "Niski", "Karzel", ].rngsus()
+    //return Math.floor(((Math.random()*50))+140)
 };
 export const waga = (props)=> {
-
-    return Math.floor(((Math.random()*30))+40)
+    return ["spasiony", "gruby", "przecietny", "chudy", "wyglodzony"].rngsus()
+    //return Math.floor(((Math.random()*30))+40)
 };
 export const oczy = (props)=> {
 
