@@ -13,6 +13,7 @@ import SkillsGrid from './SkillsGrid.js'
 class App extends Component {
   state = {
     basic: {
+      plec: 'M',
       imie:'',
       nazwisko:'',
       poch:'',
@@ -74,6 +75,7 @@ class App extends Component {
       <div>
       <button className="buttonRng" onClick={this.rngMagic}>RNG!</button>
        <div className="dataHeader">
+       <Text type="shortText" name="Plec" id="plec" change={this.manualInput} value={this.state.basic.plec} />
        <Text type="longText" name="Imie" id="imie" change={this.manualInput} value={this.state.basic.imie} /> 
        <Text type="longText" name="Nazwisko" id="nazwisko" change={this.manualInput} value={this.state.basic.nazwisko} /> 
        <Text type="longText" name="Pochodzenie" id="poch" change={this.manualInput} value={this.state.basic.poch}/> 
