@@ -31,23 +31,24 @@ class App extends Component {
       sp:'',
       ch:'',
     },
-   male: false,
+    skills:{},
 
   }
   
   
-  rngMagic = ()=> {
+  rngMagicOld = ()=> {
     const genderOutcome = gender();
-    
-
+    const pro = profesje();
+    const poch = pochodzenia();
     console.log()
     this.setState({
+      
       basic: {
         plec: genderOutcome.gender,
         imie: imionaM(),
         nazwisko:nazwiska(),
-        poch:pochodzenia(),
-        pro:profesje(),
+        poch:poch[0],
+        pro:pro[0],
         wiek:wiek(),
         wzrost:wzrost(),
         waga:waga(),
@@ -64,7 +65,7 @@ class App extends Component {
       
     })
   }
-  showPersons = () => {
+  rngMagic = () => {
     
    
       let randomName;
@@ -105,11 +106,32 @@ class App extends Component {
       skillsFromProf.forEach(skill => {
         let skillLvl = skillDice();
     skillsFinal[skill] = skillLvl;
+    
     });
       let tricks = tricksRoll();
-      console.log("After function:", tricks);
-      
-      console.log("Sztuczki:",tricks, "Umiejetnosci:",skillsFinal, "Pochodzenie:", pochodzenie[0], "Staty:",statsFinal,"Prof:", profesja[0], "Imie",randomName, "Gender:", genderOutcome);
+    this.setState({
+      basic: {
+        plec: genderOutcome.gender,
+        imie: randomName,
+        nazwisko:nazwiska(),
+        poch: pochodzenie[0],
+        pro: profesja[0],
+        wiek:wiek(),
+        wzrost:wzrost(),
+        waga:waga(),
+        oczy:oczy(),
+        wlosy:wlosy(),
+        spec:spec(),
+        choroba:choroba(),
+        zr: statsFinal.zr,
+        bu: statsFinal.bu,
+        pr: statsFinal.pr,
+        sp: statsFinal.sp,
+        ch: statsFinal.ch,
+      },
+      skills: skillsFinal
+    })
+    console.log(this.state);
     
     
   };
@@ -117,7 +139,7 @@ class App extends Component {
     return (
       <div>
       <button className="buttonRng" onClick={this.rngMagic}>RNG!</button>
-      <button className="buttonRng+" onClick={this.showPersons}>RNG+</button>
+      <button className="buttonRng+" onClick={this.rngMagicOld}>RNG-OLD</button>
        <div className="dataHeader">
        
        <Text type="longText" name="Imie" id="imie" change={this.manualInput} value={this.state.basic.imie} /> 
@@ -136,7 +158,7 @@ class App extends Component {
        <Text type="longText" name="Choroba" id="choroba" change={this.manualInput} value={this.state.basic.choroba}/>
        </div>
        <StatLine bu={this.state.basic.bu} zr={this.state.basic.zr} sp={this.state.basic.sp} pr={this.state.basic.pr} ch={this.state.basic.ch}/>
-       <SkillsGrid />
+       <SkillsGrid skills={this.state.skills} />
        
       </div>
       

@@ -51,11 +51,11 @@ export const wiek = (props)=> {
     return Math.floor(((Math.random()*30))+18)
 };
 export const wzrost = (props)=> {
-    return ["Olbrzym", "Wysoki", "Sredni", "Niski", "Karzel", ].rngsus()
+    return ["Olbrzymi", "Wysoki","Wysoki", "Sredni","Sredni","Sredni","Sredni","Sredni", "Niski","Niski", "Karlowatość", ].rngsus()
     //return Math.floor(((Math.random()*50))+140)
 };
 export const waga = (props)=> {
-    return ["spasiony", "gruby", "przecietny", "chudy", "wyglodzony"].rngsus()
+    return ["Otyłość", "Ponad przeciętna", "Przecietna","Przecietna","Przecietna","Przecietna","Przecietna","Przecietna", "Niedowaga", "Niedowaga", "Wychudzenie"].rngsus()
     //return Math.floor(((Math.random()*30))+40)
 };
 export const oczy = (props)=> {
