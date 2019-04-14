@@ -6,10 +6,10 @@ const skills = (props)=> {
 if (props.nameM){
     skillsToRender = 
          (<div className="skillWrap">
-         <div className="skillContenerT"><h5>  {props.nameM}  </h5></div>
-         <div className="skillContener"><p>  {props.name1}  <input className="statInput" defaultValue={props.value1} /></p></div>
-         <div className="skillContener"><p>  {props.name2}  <input className="statInput" defaultValue={props.value2} /></p></div>
-         <div className="skillContener"><p>  {props.name3}  <input className="statInput" defaultValue={props.value3} /></p></div>
+         <div className={props.style}><h7>  {props.nameM}  </h7></div>
+         <div className="skillContener"><p>  {props.name1}  <input className="statInputS" defaultValue={props.value1} /></p></div>
+         <div className="skillContener"><p>  {props.name2}  <input className="statInputS" defaultValue={props.value2} /></p></div>
+         <div className="skillContener"><p>  {props.name3}  <input className="statInputS" defaultValue={props.value3} /></p></div>
         </div>)
     
 }

@@ -3,7 +3,7 @@ import React from 'react';
 const staty = (props)=> {
 
     return (
-        <div className="statyContener">
+        <div className={props.style}>
          <h3>  {props.name}: <input className="statInput" defaultValue={props.value} />  </h3>
         </div>
     )}

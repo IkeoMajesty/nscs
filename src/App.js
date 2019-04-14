@@ -160,8 +160,9 @@ class App extends Component {
        </div>
        <h6>Credits: Code and layout: Ikeo. Great help, inspiration and lot of manual work: Kamil "Kowboj" Miecielica! Thanks man!</h6>
        <StatLine bu={this.state.basic.bu} zr={this.state.basic.zr} sp={this.state.basic.sp} pr={this.state.basic.pr} ch={this.state.basic.ch}/>
-       <SkillsGrid skills={this.state.skills} />
-       
+       <div className="skillsGrid">
+       <SkillsGrid  skills={this.state.skills} />
+       </div>
       </div>
       
     );

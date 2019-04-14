@@ -5,11 +5,11 @@ const statLine = (props)=> {
 
     return (
         <div className="dataHeader">
-        <Staty name="Zrecznosc" value={props.zr} /> 
-        <Staty name="Budowa" value={props.bu} /> 
-        <Staty name="Percepcja" value={props.pr} /> 
-        <Staty name="Spryt" value={props.sp} /> 
-        <Staty name="Charakter" value={props.ch} />
+        <Staty style="statyContenerZr" name="Zrecznosc" value={props.zr} /> 
+        <Staty style="statyContenerBu" name="Budowa" value={props.bu} /> 
+        <Staty style="statyContenerPr" name="Percepcja" value={props.pr} /> 
+        <Staty style="statyContenerSp" name="Spryt" value={props.sp} /> 
+        <Staty style="statyContenerCh" name="Charakter" value={props.ch} />
         </div>
       
     )}
