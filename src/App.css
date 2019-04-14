@@ -221,5 +221,15 @@ h6{
 }
 
 .skillsGrid{
+  display: flex;
   width: 75vw;
+}
+.tricks{
+  background: pink;
+  width: 20vw;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  border: 2px solid black;
+  text-align: center;
+
 }

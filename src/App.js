@@ -32,6 +32,7 @@ class App extends Component {
       ch:'',
     },
     skills:{},
+    tricks:[],
 
   }
   
@@ -62,53 +63,40 @@ class App extends Component {
         sp:d20avfrom3(),
         ch:d20avfrom3(),
       },
-      
+      skills:{},
+      tricks:{}
     })
   }
   rngMagic = () => {
-    
-   
-      let randomName;
-      let genderOutcome = gender();
-      if (genderOutcome.gender == "M"){
-              randomName = imionaM();
-      }else{
-              randomName = imionaF();
-      };
-      let profesja = profesje();
-      let priorityStat1 = profesja[1];
-      let priorityStat2 = profesja[2];
-      let sixRolls = [d20avfrom3(),d20avfrom3(),d20avfrom3(),d20avfrom3(),d20avfrom3(),d20avfrom3()];
-      console.log("Pierwszy rzut:",sixRolls);
-      
-      sixRolls.sort(function(a, b){return b-a});
-      sixRolls.pop();
-      let priorityRoll1= sixRolls.shift();
-      let priorityRoll2= sixRolls.shift();
-      sixRolls.shuffle();
-      const statRolls = sixRolls;
-      const statsFinal = {[priorityStat1]:priorityRoll1, [priorityStat2]:priorityRoll2 }
-      
-      // !("Bu" in statsFinal) ? statsFinal.Bu = statRolls.shift() : null;
-      // statsFinal.Bu = statsFinal.hasOwnProperty('Bu') ? statRolls.shift() : null
-  
-  
-      !("bu" in statsFinal) ? statsFinal.bu = statRolls.shift() : console.log(statsFinal.bu);
-      !("zr" in statsFinal) ? statsFinal.zr = statRolls.shift() : console.log(statsFinal.zr);
-      !("sp" in statsFinal) ? statsFinal.sp = statRolls.shift() : console.log(statsFinal.sp);
-      !("ch" in statsFinal) ? statsFinal.ch = statRolls.shift() : console.log(statsFinal.ch);
-      !("pr" in statsFinal) ? statsFinal.pr = statRolls.shift() : console.log(statsFinal.pr);
-      const pochodzenie = pochodzenia();
-      statsFinal[pochodzenie[1]]=(statsFinal[pochodzenie[1]]+1);
-      let skillsFinal = {};
-      let skillsFromProf = profesja[3];
-      
-      skillsFromProf.forEach(skill => {
-        let skillLvl = skillDice();
+  let randomName;
+  let genderOutcome = gender();
+  (genderOutcome.gender == "M") ? randomName = imionaM() : randomName = imionaF();
+  let profesja = profesje();
+  let priorityStat1 = profesja[1];
+  let priorityStat2 = profesja[2];
+  let sixRolls = [d20avfrom3(),d20avfrom3(),d20avfrom3(),d20avfrom3(),d20avfrom3(),d20avfrom3()];
+  console.log("First Roll:",sixRolls);
+  sixRolls.sort(function(a, b){return b-a});
+  sixRolls.pop();
+  let priorityRoll1= sixRolls.shift();
+  let priorityRoll2= sixRolls.shift();
+  sixRolls.shuffle();
+  const statRolls = sixRolls;
+  const statsFinal = {[priorityStat1]:priorityRoll1, [priorityStat2]:priorityRoll2 }
+  !("bu" in statsFinal) ? statsFinal.bu = statRolls.shift() : console.log(statsFinal.bu);
+  !("zr" in statsFinal) ? statsFinal.zr = statRolls.shift() : console.log(statsFinal.zr);
+  !("sp" in statsFinal) ? statsFinal.sp = statRolls.shift() : console.log(statsFinal.sp);
+  !("ch" in statsFinal) ? statsFinal.ch = statRolls.shift() : console.log(statsFinal.ch);
+  !("pr" in statsFinal) ? statsFinal.pr = statRolls.shift() : console.log(statsFinal.pr);
+  const pochodzenie = pochodzenia();
+  statsFinal[pochodzenie[1]]=(statsFinal[pochodzenie[1]]+1);
+  let skillsFinal = {};
+  let skillsFromProf = profesja[3];
+  skillsFromProf.forEach(skill => {
+    let skillLvl = skillDice();
     skillsFinal[skill] = skillLvl;
-    
-    });
-      let tricks = tricksRoll();
+  });
+  let tricks = tricksRoll();
     this.setState({
       basic: {
         plec: genderOutcome.gender,
@@ -129,7 +117,8 @@ class App extends Component {
         sp: statsFinal.sp,
         ch: statsFinal.ch,
       },
-      skills: skillsFinal
+      skills: skillsFinal,
+      tricks: tricks
     })
     console.log(this.state);
     
@@ -142,7 +131,6 @@ class App extends Component {
       <button className="buttonRng" onClick={this.rngMagic}>RNG!</button>
       <button className="buttonRng+" onClick={this.rngMagicOld}>RNG-OLD</button>
        <div className="dataHeader">
-       
        <Text type="longText" name="Imie" id="imie" change={this.manualInput} value={this.state.basic.imie} /> 
        <Text type="longText" name="Nazwisko" id="nazwisko" change={this.manualInput} value={this.state.basic.nazwisko} /> 
        <Text type="longText" name="Pochodzenie" id="poch" change={this.manualInput} value={this.state.basic.poch}/> 
@@ -162,6 +150,12 @@ class App extends Component {
        <StatLine bu={this.state.basic.bu} zr={this.state.basic.zr} sp={this.state.basic.sp} pr={this.state.basic.pr} ch={this.state.basic.ch}/>
        <div className="skillsGrid">
        <SkillsGrid  skills={this.state.skills} />
+       <div className="tricks">
+       <h3>Sztuczki</h3>
+       {this.state.tricks.map(trick=>{
+         return (<li>{trick[0]}</li>)
+       })}
+       </div>
        </div>
       </div>
       
