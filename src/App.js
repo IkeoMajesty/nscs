@@ -138,6 +138,7 @@ class App extends Component {
   render() {
     return (
       <div>
+      
       <button className="buttonRng" onClick={this.rngMagic}>RNG!</button>
       <button className="buttonRng+" onClick={this.rngMagicOld}>RNG-OLD</button>
        <div className="dataHeader">
@@ -157,6 +158,7 @@ class App extends Component {
        <Text type="mediumText" name="Spec." id="spec" change={this.manualInput}value={this.state.basic.spec}/> 
        <Text type="longText" name="Choroba" id="choroba" change={this.manualInput} value={this.state.basic.choroba}/>
        </div>
+       <h6>Credits: Code and layout: Ikeo. Great help, inspiration and lot of manual work: Kamil "Kowboj" Miecielica! Thanks man!</h6>
        <StatLine bu={this.state.basic.bu} zr={this.state.basic.zr} sp={this.state.basic.sp} pr={this.state.basic.pr} ch={this.state.basic.ch}/>
        <SkillsGrid skills={this.state.skills} />
        

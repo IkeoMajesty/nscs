@@ -27,6 +27,23 @@ export const profesje = (props)=> {
     ["Kurier", "zr", "ch", ["samochod", "motocykl", "zwienneDlonie", "pistolety", "perswazja", "niezlomnosc", "wyczucieKierunku", "znajomoscTerenu"]],
     ["Łowca", "pr", "zr", ["kondycja", "wspinaczka", "kradziezKieszonkowa", "otwieranieZamkow", "zwinneDlonie", "niezlomnosc", "elektronika", "mechanika", "znajomoscTerenu"]],
     ["Łowca mutantów", "zr", "bu", ["bronReczna", "karabiny", "tropienie", "przygotowaniePulapki", "skradanieSie", "ukrywanieSie", "czujnosc", "maskowanie", "lowiectwo"]],
+    ["Mafiozo", "ch", "sp", ["zastraszanie", "perswazja", "blef", "niezlomnosc", "pistolety", "postrzeganieEmocji", "elektronika" ]],
+    ["Medyk", "sp", "pr", ["pierwszaPomoc", "leczenieRan", "leczenieChorob", "czujnosc", "odpornoscNaBol", "morale", "wypatrywanie" ]],
+    ["Monter", "sp", "pr", ["komputery", "elektronika", "mechanika", "samochody", "ciezarowki", "matematyka", "fizyka" ]],
+    ["Najemnik", "zr", "bu", ["karabiny", "bronReczna", "kondycja", "odpornoscNaBol", "niezlomnosc", "samochod", "plywanie" ]],
+    ["Ochroniarz", "bu", "zr", ["kondycja", "bijatyka", "bronReczna", "pistolety", "niezlomnosc", "odpornoscNaBol", "czujnosc" ]],
+    ["Sędzia", "ch", "zr", ["postrzeganieEmocji", "perswazja", "karabiny", "zdolnosciPrzywodcze", "morale", "zastraszanie", "pistolety"]],
+    ["Spec", "sp", "pr", ["elektronika", "matematyka", "rusznikarstwo", "materialyWybuchowe", "mechanika", "maszynyCiezkie", "wozyBojowe" ]],
+    ["Szaman", "ch", "pr", ["niezlomnosc", "zdolnosciPrzywodcze", "nasluchiwanie", "znajomoscTerenu", "odpornoscNaBol", "zdobywanieWody", "postrzeganieEmocji" ]],
+    ["Szczur", "pr", "sp", ["znajomoscTerenu", "maskowanie", "ukrywanieSie", "czujnosc", "wyczucieKierunku", "perswazja", "niezlomnosc" ]],
+    ["Treser bestii", "ch", "zr", ["opiekaNadZwierzetami", "perswazja", "pistolety", "niezlomnosc", "zastraszanie", "bijatyka", "odpornoscNaBol" ]],
+    ["Tropiciel", "pr", "zr", ["tropienie", "karabiny", "wyczucieKierunku", "znajomoscTerenu", "bronReczna", "skradanieSie", "przygotowaniePulapek" ]],
+    ["Wojownik autostrady", "zr", "bu", ["samochody", "pistolety", "morale", "rzucanie", "niezlomnosc", "zastraszanie", "kondycja" ]],
+    ["Wojownik klanu", "bu", "zr", ["kondycja", "bronReczna", "wspinaczka", "niezlomnosc", "bijatyka", "rzucanie", "luk" ]],
+    ["Zabójca", "zr", "sp", ["bronReczna", "pistolety", "skradanieSie", "maskowanie", "morale", "czujnosc", "niezlomnosc" ]],
+    ["Zabójca maszyn", "zr", "sp", ["karabiny", "rzucanie", "elektronika", "komputery", "ciezarowki", "matematyka", "maszynyCiezkie"]],
+    ["Złodziej", "zr", "sp", ["kradziezKieszonkowa", "otwieranieZamkow", "elektronika", "zwinneDlonie", "bronReczna", "skradanieSie" ]],
+    ["Żołnierz", "zr", "bu", ["karabiny", "odpornoscNaBol", "bronReczna", "bijatyka", "kondycja", "plywanie", "morale" ]],
     
 ].rngsus()};
 
