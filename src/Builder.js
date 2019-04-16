@@ -1,4 +1,4 @@
-import { skillDice, tricksRoll, gender, imionaM, imionaF, nazwiska, profesje, pochodzenia, wiek, wzrost, waga, oczy, wlosy, spec, choroba, d20avfrom3 } from "./Rngs";
+import { skillDice, skillsRoll, gender, imionaM, imionaF, nazwiska, profesje, pochodzenia, wiek, wzrost, waga, oczy, wlosy, spec, choroba, d20avfrom3 } from "./Rngs";
 
 const buildDependencies = ()=> {
    
@@ -39,8 +39,8 @@ const buildDependencies = ()=> {
     skillsFinal[skill] = skillLvl;
     }
     skillsFromProf.forEach(rollForSkills());
-    let tricks = tricksRoll();
-    console.log(tricks, skillsFinal, pochodzenie, statsFinal, profesja,randomName);
+    let skills = skillsRoll();
+    console.log(skills, skillsFinal, pochodzenie, statsFinal, profesja,randomName);
     
 
 
@@ -49,4 +49,60 @@ const buildDependencies = ()=> {
 
 
 
+export const skillsRoll = (skillsFromProf)=> {
+    let chance = 9;
+    let skillsListUnfiltered = ["kondycja", "plywanie","wspinaczka", "jazdaKonna", "powozenie", "ujezdzanie", "bijatyka", "bronReczna", "rzucanie", "samochod", "motocykl", "ciezarowka", "kradziezKieszonkowa", "otwieranieZamkow", "zwinneDlonie", "pistolety", "karabiny", "bronMaszynowa", "luk", "kusza", "proca", "zastraszanie", "perswazja", "zdolnosciPrzywodcze", "postrzeganieEmocji", "blef", "opiekaNadZwierzetami", "odpornoscNaBol", "niezlomnosc", "morale", "pierwszaPomoc", "leczenieRan", "leczenieChorob", "mechanika", "elektronika", "komputery", "maszynyCiezkie", "wozyBojowe", "kutry", "rusznikarstwo", "wyrzutnie", "materialyWybuchowe", "wyczucieKierunku", "przygotowaniePulapki", "tropienie", "nasluchiwanie", "wypatrywanie", "czujnosc", "skradanieSie", "ukrywanieSie", "maskowanie", "lowiectwo", "znajomoscTerenu", "zdobywanieWody",];
+    let skillsList = [];
+    let skills = [];
+    filteringList(skillsFromProf);
+    rollingChance();
+    return skills;
+    function filteringList(skillsFromProf){
+        skillsListUnfiltered.forEach(skill=>{
+            !skillsFromProf[skill] && skillsList.shift(skill); 
+        })
+    }
+    function rollingChance(){
+      if (Math.floor(((Math.random()*10)+1))<=chance){
+        let trickLength;
+        let trickIndex;
+        switch (chance) {
+          case 9:
+            trickLength = skillsList.length;
+            trickIndex = (Math.floor(((Math.random()*trickLength)+1)))
+            skills.push(skillsList[trickIndex]);
+            skillsList.splice(trickIndex, 1);
+            chance = 6;
+            break;
+          case 6: 
+            trickLength = skillsList.length;
+            trickIndex = (Math.floor(((Math.random()*trickLength)+1)))
+            skills.push(skillsList[trickIndex]);
+            skillsList.splice(trickIndex, 1);
+            chance = 3;
+            break;
+          case 3: 
+            trickLength = skillsList.length;
+            trickIndex = (Math.floor(((Math.random()*trickLength)+1)))
+            skills.push(skillsList[trickIndex]);
+            skillsList.splice(trickIndex, 1);
+            chance = 1;
+            break; 
+          default: 
+            trickLength = skillsList.length;
+            trickIndex = (Math.floor(((Math.random()*trickLength)+1)))
+            skills.push(skillsList[trickIndex]);
+            skillsList.splice(trickIndex, 1);
+            chance = 1;
+            break; 
+        }
+        rollingChance();
+    }else{
+     
+      console.log("Skills From the function:",skills);
+      
+      
+    }
+    
+}
 }

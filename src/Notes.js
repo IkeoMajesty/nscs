@@ -26,7 +26,7 @@ rngMagic = ()=> {
       
     })
   }
-
+dsds
   const tricksRoll = (props)=> {
     let chance = 9;
     let tricksList = [
@@ -201,28 +201,47 @@ rngMagic = ()=> {
   }
 } 
 
+library underscore //TODO
+
+["Dobywanie",				{pistolety: 5, bronReczna: 5, zr: 12}]
+
+let profile = {};
+
+const o2 = {p:0, ...profile[2]}
+
+const compare = (requirements, o2) => {
+  const result = true;
+  Object.keys(requirements).forEach(key => {
+
+  if (o2.hasOWnPorprtt(key) && o2[key] !== requirements[key]) {
+    result = false;
+  }
+  
+  })
+
+}
 
 
 
 
 
-["Mafiozo", "ch", "sp"],
-    ["Medyk", "sp", "pr"],
-    ["Monter", "sp", "pr"],
-    ["Najemnik", "zr", "bu"],
-    ["Ochroniarz", "bu", "zr"],
-    ["Sędzia", "ch", "zr"],
-    ["Spec", "sp", "pr"],
-    ["Szaman", "ch", "pr"],
-    ["Szczur", "pr", "sp"],
-    ["Treser bestii", "ch", "zr"],
-    ["Tropiciel", "pr", "zr"],
-    ["Wojownik autostrady", "zr", "bu"],
-    ["Wojownik klanu", "bu", "zr"],
-    ["Zabójca", "zr", "sp"],
-    ["Zabójca maszyn", "zr", "sp"],
-    ["Złodziej", "zr", "sp"],
-    ["Żołnierz", "zr", "bu"],
+    ["Mafiozo", "ch", "sp", ["zastraszanie", "perswazja", "blef", "niezlomnosc", "pistolety", "postrzeganieEmocji", "elektronika" ]],
+    ["Medyk", "sp", "pr", ["pierwszaPomoc", "leczenieRan", "leczenieChorob", "czujnosc", "odpornoscNaBol", "morale", "wypatrywanie" ]],
+    ["Monter", "sp", "pr", ["komputery", "elektronika", "mechanika", "samochody", "ciezarowki", "matematyka", "fizyka" ]],
+    ["Najemnik", "zr", "bu", ["karabiny", "bronReczna", "kondycja", "odpornoscNaBol", "niezlomnosc", "samochod", "plywanie" ]],
+    ["Ochroniarz", "bu", "zr", ["kondycja", "bijatyka", "bronReczna", "pistolety", "niezlomnosc", "odpornoscNaBol", "czujnosc" ]],
+    ["Sędzia", "ch", "zr", ["postrzeganieEmocji", "perswazja", "karabiny", "zdolnosciPrzywodcze", "morale", "zastraszanie", "pistolety"]],
+    ["Spec", "sp", "pr", ["elektronika", "matematyka", "rusznikarstwo", "materialyWybuchowe", "mechanika", "maszynyCiezkie", "wozyBojowe" ]],
+    ["Szaman", "ch", "pr", ["niezlomnosc", "zdolnosciPrzywodcze", "nasluchiwanie", "znajomoscTerenu", "odpornoscNaBol", "zdobywanieWody", "postrzeganieEmocji" ]],
+    ["Szczur", "pr", "sp", ["znajomoscTerenu", "maskowanie", "ukrywanieSie", "czujnosc", "wyczucieKierunku", "perswazja", "niezlomnosc" ]],
+    ["Treser bestii", "ch", "zr", ["opiekaNadZwierzetami", "perswazja", "pistolety", "niezlomnosc", "zastraszanie", "bijatyka", "odpornoscNaBol" ]],
+    ["Tropiciel", "pr", "zr", ["tropienie", "karabiny", "wyczucieKierunku", "znajomoscTerenu", "bronReczna", "skradanieSie", "przygotowaniePulapek" ]],
+    ["Wojownik autostrady", "zr", "bu", ["samochody", "pistolety", "morale", "rzucanie", "niezlomnosc", "zastraszanie", "kondycja" ]],
+    ["Wojownik klanu", "bu", "zr", ["kondycja", "bronReczna", "wspinaczka", "niezlomnosc", "bijatyka", "rzucanie", "luk" ]],
+    ["Zabójca", "zr", "sp", ["bronReczna", "pistolety", "skradanieSie", "maskowanie", "morale", "czujnosc", "niezlomnosc" ]],
+    ["Zabójca maszyn", "zr", "sp", ["karabiny", "rzucanie", "elektronika", "komputery", "ciezarowki", "matematyka", "maszynyCiezkie"]],
+    ["Złodziej", "zr", "sp", ["kradziezKieszonkowa", "otwieranieZamkow", "elektronika", "zwinneDlonie", "bronReczna", "skradanieSie" ]],
+    ["Żołnierz", "zr", "bu", ["karabiny", "odpornoscNaBol", "bronReczna", "bijatyka", "kondycja", "plywanie", "morale" ]],
 
 
 
@@ -233,3 +252,70 @@ rngMagic = ()=> {
     skillsFromProf.forEach(skill => {
       let skillLvl = skillDice();
   skillsFinal[skill] = skillLvl;
+
+     
+      // !("Bu" in statsFinal) ? statsFinal.Bu = statRolls.shift() : null;
+      // statsFinal.Bu = statsFinal.hasOwnProperty('Bu') ? statRolls.shift() : null
+  
+  
+
+
+
+
+export const skillsRoll = (skillsFromProf)=> {
+    let chance = 9;
+    let tricksListUnfiltered = ["kondycja", "plywanie","wspinaczka", "jazdaKonna", "powozenie", "ujezdzanie", "bijatyka", "bronReczna", "rzucanie", "samochod", "motocykl", "ciezarowka", "kradziezKieszonkowa", "otwieranieZamkow", "zwinneDlonie", "pistolety", "karabiny", "bronMaszynowa", "luk", "kusza", "proca", "zastraszanie", "perswazja", "zdolnosciPrzywodcze", "postrzeganieEmocji", "blef", "opiekaNadZwierzetami", "odpornoscNaBol", "niezlomnosc", "morale", "pierwszaPomoc", "leczenieRan", "leczenieChorob", "mechanika", "elektronika", "komputery", "maszynyCiezkie", "wozyBojowe", "kutry", "rusznikarstwo", "wyrzutnie", "materialyWybuchowe", "wyczucieKierunku", "przygotowaniePulapki", "tropienie", "nasluchiwanie", "wypatrywanie", "czujnosc", "skradanieSie", "ukrywanieSie", "maskowanie", "lowiectwo", "znajomoscTerenu", "zdobywanieWody",];
+    let tricksList = [];
+    let tricks = [];
+    filteringList(skillsFromProf);
+    rollingChance();
+    return tricks;
+    function filteringList(skillsFromProf){
+        tricksListUnfiltered.forEach(skill=>{
+            !skillsFromProf[skill] && tricksList.shift(skill); 
+        })
+    }
+    function rollingChance(){
+      if (Math.floor(((Math.random()*10)+1))<=chance){
+        let trickLength;
+        let trickIndex;
+        switch (chance) {
+          case 9:
+            trickLength = tricksList.length;
+            trickIndex = (Math.floor(((Math.random()*trickLength)+1)))
+            tricks.push(tricksList[trickIndex]);
+            tricksList.splice(trickIndex, 1);
+            chance = 6;
+            break;
+          case 6: 
+            trickLength = tricksList.length;
+            trickIndex = (Math.floor(((Math.random()*trickLength)+1)))
+            tricks.push(tricksList[trickIndex]);
+            tricksList.splice(trickIndex, 1);
+            chance = 3;
+            break;
+          case 3: 
+            trickLength = tricksList.length;
+            trickIndex = (Math.floor(((Math.random()*trickLength)+1)))
+            tricks.push(tricksList[trickIndex]);
+            tricksList.splice(trickIndex, 1);
+            chance = 1;
+            break; 
+          default: 
+            trickLength = tricksList.length;
+            trickIndex = (Math.floor(((Math.random()*trickLength)+1)))
+            tricks.push(tricksList[trickIndex]);
+            tricksList.splice(trickIndex, 1);
+            chance = 1;
+            break; 
+        }
+        rollingChance();
+    }else{
+     
+      console.log("From the function:",tricks);
+      
+      
+    }
+    
+}
+}

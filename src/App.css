@@ -155,10 +155,7 @@
   background-color:#afafaf;
   border: 1px solid black;
 }
-h7{
-  text-align: center;
-  
-}
+
 .skillWrap{
   height: 100px;
   width: 150px;
@@ -199,7 +196,7 @@ h7{
 .dataHeaderSk{
   display: flex;
   justify-items: auto;
-  height: 150px;
+  height: 120px;
   width: 75%;
 }
 
@@ -215,10 +212,7 @@ h7{
   border: 2px solid black;
 
 }
-h6{
-  text-align: center;
-  padding-top: 10px;
-}
+
 
 .skillsGrid{
   display: flex;
@@ -232,4 +226,9 @@ h6{
   border: 2px solid black;
   text-align: center;
 
+}
+h6{
+  text-align: center;
+  padding-top: 5px;
+  
 }
