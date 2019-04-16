@@ -75,7 +75,7 @@ class App extends Component {
   let priorityStat1 = profesja[1];
   let priorityStat2 = profesja[2];
   let sixRolls = [d20avfrom3(),d20avfrom3(),d20avfrom3(),d20avfrom3(),d20avfrom3(),d20avfrom3()];
-  console.log("First Roll:",sixRolls);
+  // console.log("First Roll:",sixRolls);
   sixRolls.sort(function(a, b){return b-a});
   sixRolls.pop();
   let priorityRoll1= sixRolls.shift();
@@ -97,8 +97,6 @@ class App extends Component {
     let skillLvl = (Math.floor(((Math.random()*10)+1)));
     skillsFinal[skill] = skillLvl;
   });
-  console.log(skillsFinal);
-  
   skillsFromProf.forEach(skill => {
     let skillLvl = skillDice();
     skillsFinal[skill] = skillLvl;
@@ -127,7 +125,7 @@ class App extends Component {
       skills: skillsFinal,
       tricks: tricks
     })
-    console.log(this.state);
+    // console.log(this.state);
     
     
   };
@@ -135,7 +133,7 @@ class App extends Component {
     return (
       <div>
       
-      <button className="buttonRng" onClick={this.rngMagic}>RNG!</button>
+      
       
        <div className="dataHeader">
        <Text type="longText" name="Imie" id="imie" change={this.manualInput} value={this.state.basic.imie} /> 
@@ -153,17 +151,20 @@ class App extends Component {
        <Text type="mediumText" name="Spec." id="spec" change={this.manualInput}value={this.state.basic.spec}/> 
        <Text type="longText" name="Choroba" id="choroba" change={this.manualInput} value={this.state.basic.choroba}/>
        </div>
-       <h6>Credits: Code and layout: Ikeo. Great help, inspiration and lot of manual work: Kamil "Kowboj" Miecielica! Thanks man!</h6>
+       <h6 className="credits">Credits: Code and layout: Ikeo. Great help, inspiration and lot of manual work: Kamil "Kowboj" Miecielica! Thanks man!</h6>
        <StatLine bu={this.state.basic.bu} zr={this.state.basic.zr} sp={this.state.basic.sp} pr={this.state.basic.pr} ch={this.state.basic.ch}/>
        <div className="skillsGrid">
        <SkillsGrid  skills={this.state.skills} />
        <div className="tricks">
        <h3>Sztuczki</h3>
        {this.state.tricks.map(trick=>{
-         return (<li>{trick[0]}</li>)
+         return (<li key={trick[0]}>{trick[0]}</li>)
        })}
+       
        </div>
+       <div className="buttonContainer"><button className="buttonRng" onClick={this.rngMagic}><h1>RNG!</h1></button></div>
        </div>
+       
       </div>
       
     );

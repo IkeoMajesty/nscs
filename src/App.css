@@ -201,11 +201,11 @@
 }
 
 .buttonRng{
-  width: 20vw;
-  height: 5vh;
-  margin-top: 3vh;
-  margin-bottom: 3vh;
-  margin-left: 40vw;
+  width: 300px;
+  height: 300px;
+  margin-top: 0;
+  
+  
   background-color: red;
   color: aliceblue;
   font-weight: bolder;
@@ -216,11 +216,11 @@
 
 .skillsGrid{
   display: flex;
-  width: 75vw;
+  width: 100vw;
 }
 .tricks{
   background: pink;
-  width: 20vw;
+  width: 300px;
   margin-left: 30px;
   margin-bottom: 30px;
   border: 2px solid black;
@@ -231,4 +231,7 @@ h6{
   text-align: center;
   padding-top: 5px;
   
+}
+.buttonContainer{
+  padding:50px;
 }

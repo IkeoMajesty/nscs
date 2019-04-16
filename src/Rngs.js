@@ -271,7 +271,7 @@ export const tricksRoll = (props)=> {
         rollingChance();
     }else{
      
-      console.log("From the function:",tricks);
+      console.log('Wszystkie sztuczki wraz z wymogami zostaly spisane przez Kamila "Kowboja" Miecielica!!!');
       
       
     }
@@ -279,7 +279,7 @@ export const tricksRoll = (props)=> {
 }
 }
 export const skillsRoll = (skillsFromProf)=> {
-    console.log("Skills from prof:",skillsFromProf);
+    
     
     let chance = 9;
     let skillsListUnfiltered = ["kondycja", "plywanie","wspinaczka", "jazdaKonna", "powozenie", "ujezdzanie", "bijatyka", "bronReczna", "rzucanie", "samochod", "motocykl", "ciezarowka", "kradziezKieszonkowa", "otwieranieZamkow", "zwinneDlonie", "pistolety", "karabiny", "bronMaszynowa", "luk", "kusza", "proca", "zastraszanie", "perswazja", "zdolnosciPrzywodcze", "postrzeganieEmocji", "blef", "opiekaNadZwierzetami", "odpornoscNaBol", "niezlomnosc", "morale", "pierwszaPomoc", "leczenieRan", "leczenieChorob", "mechanika", "elektronika", "komputery", "maszynyCiezkie", "wozyBojowe", "kutry", "rusznikarstwo", "wyrzutnie", "materialyWybuchowe", "wyczucieKierunku", "przygotowaniePulapki", "tropienie", "nasluchiwanie", "wypatrywanie", "czujnosc", "skradanieSie", "ukrywanieSie", "maskowanie", "lowiectwo", "znajomoscTerenu", "zdobywanieWody",];
@@ -291,7 +291,7 @@ export const skillsRoll = (skillsFromProf)=> {
     function filteringList(skillsFromProf){
         skillsListUnfiltered.forEach(skill=>{
             !skillsFromProf[skill] && skillsList.push(skill);
-            console.log("Skill:",skill, "SkillList:", skillsList);
+            
              
         })
     }
@@ -332,7 +332,7 @@ export const skillsRoll = (skillsFromProf)=> {
         rollingChance();
     }else{
      
-      console.log("Skills From the function:",skills);
+      console.log("Skills added randomly:",skills);
       
       
     }
