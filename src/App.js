@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './App.css';
+import './App.scss';
 import StatLine from "./StatLine.js";
 import Text from "./Text.js";
 import { skillDice, tricksRoll, gender, imionaM, imionaF, nazwiska, profesje, pochodzenia, wiek, wzrost, waga, oczy, wlosy, spec, choroba, d20avfrom3, skillsRoll } from "./Rngs.js";
@@ -101,7 +101,9 @@ class App extends Component {
     let skillLvl = skillDice();
     skillsFinal[skill] = skillLvl;
   });
-  let tricks = tricksRoll();
+  const currentStats={...skillsFinal, ...statsFinal};
+  // console.log(currentStats);
+  let tricks = tricksRoll(currentStats);
     this.setState({
       basic: {
         plec: genderOutcome.gender,

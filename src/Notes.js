@@ -159,7 +159,7 @@ dsds
     ["zelazne Racje",			{Lowiectwo: 2}]];
     let tricks = [];
     rollingChance();
-    const checkTricks = ()=>{};
+    
     const rollingChnce = () => {
       if (Math.floor(((Math.random()*10)+1))<=chance){
         let trickLength;
@@ -319,3 +319,14 @@ export const skillsRoll = (skillsFromProf)=> {
     
 }
 }
+const tricks = [["name", {stat:2, stat2:3, stat3:4}]]
+const currentStats={...skillsFinal, ...statsFinal}
+let filteredTricks = [];
+const filterTricks = (currentStats){
+  tricks.forEach(trick=>{
+    trick[1].forEach(req=>{
+      (currentStats[req]==req)&&filteredTricks.push(trick)
+    })
+  })
+}
+

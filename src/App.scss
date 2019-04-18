@@ -1,0 +1,237 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.statyContenerZr{
+  text-align: center;
+  display: flexbox;
+ 
+  width: 18vw;
+   
+  padding: 5px;
+  margin: 1vw;
+  background-color: rgb(77, 224, 64);
+  border: 2px solid black;
+}
+.statyContenerBu{
+  text-align: center;
+  display: flexbox;
+ 
+  width: 18vw;
+   
+  padding: 5px;
+  margin: 1vw;
+  background-color: tomato;
+  border: 2px solid black;
+}
+.statyContenerPr{
+  text-align: center;
+  display: flexbox;
+ 
+  width: 18vw;
+   
+  padding: 5px;
+  margin: 1vw;
+  background-color: rgb(82, 162, 236);
+  border: 2px solid black;
+}
+.statyContenerSp{
+  text-align: center;
+  display: flexbox;
+ 
+  width: 18vw;
+   
+  padding: 5px;
+  margin: 1vw;
+  background-color: #f18e0b;
+  border: 2px solid black;
+}
+.statyContenerCh{
+  text-align: center;
+  display: flexbox;
+ 
+  width: 18vw;
+   
+  padding: 5px;
+  margin: 1vw;
+  background-color: #afafaf;
+  border: 2px solid black;
+}
+
+
+.skillContener{
+  text-align: end;
+  display: flexbox;
+  font-size: small;
+  height: 25px;
+  width: 150px;
+  padding:1px;
+  margin: 1px;
+  background-color: #f6e0b3;
+  border: 1px solid black;
+}
+.skillContenerTZr{
+  text-align: center;
+  display: flexbox;
+  
+  height: 30px;
+  width: 150px;
+  padding: 1px;
+  margin: 1px;
+  background-color:rgb(77, 224, 64);
+  border: 1px solid black;
+}
+.skillContenerTBu{
+  text-align: center;
+  display: flexbox;
+  
+  height: 30px;
+  width: 150px;
+  padding: 1px;
+  margin: 1px;
+  background-color: Tomato;
+  border: 1px solid black;
+}
+.skillContenerTPr{
+  text-align: center;
+  display: flexbox;
+  
+  height: 30px;
+  width: 150px;
+  padding: 1px;
+  margin: 1px;
+  background-color:rgb(82, 162, 236);
+  border: 1px solid black;
+}
+.skillContenerTSp{
+  text-align: center;
+  display: flexbox;
+  
+  height: 30px;
+  width: 150px;
+  padding: 1px;
+  margin: 1px;
+  background-color:#f18e0b;
+  border: 1px solid black;
+}
+.skillContenerTCh{
+  text-align: center;
+  display: flexbox;
+  
+  height: 30px;
+  width: 150px;
+  padding: 1px;
+  margin: 1px;
+  background-color:#afafaf;
+  border: 1px solid black;
+}
+
+.skillWrap{
+  height: 100px;
+  width: 150px;
+}
+.statInput{
+  width: 40px;
+}
+.statInputS{
+  width: 20px;
+  height: 20px;
+  margin-bottom: 2px;
+}
+.longText {
+  width: 20vw;
+  text-align: center;
+  justify-content: center;
+  padding: 0px 5px;
+  
+}
+
+.shortText {
+  width: 5vw;
+  text-align: center;
+  justify-content: center;
+  padding: 0px 5px;
+}
+.mediumText {
+  width: 10vw;
+  text-align: center;
+  justify-content: center;
+  padding: 0px 5px;
+}
+
+.dataHeader{
+  display: flex;
+  justify-content: center;
+}
+.dataHeaderSk{
+  display: flex;
+  justify-items: auto;
+  height: 120px;
+  width: 75%;
+}
+
+.buttonRng{
+  width: 300px;
+  height: 300px;
+  margin-top: 0;
+  
+  
+  background-color: red;
+  color: aliceblue;
+  font-weight: bolder;
+  border: 2px solid black;
+
+}
+
+
+.skillsGrid{
+  display: flex;
+  width: 100vw;
+}
+.tricks{
+  background: pink;
+  width: 300px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  border: 2px solid black;
+  text-align: center;
+
+}
+h6{
+  text-align: center;
+  padding-top: 5px;
+  
+}
+.buttonContainer{
+  padding:50px;
+}

@@ -100,9 +100,9 @@ export const d20avfrom3 = (props)=> {
 export const skillsList = (props) => {
     return ["kondycja", "plywanie","wspinaczka", "jazdaKonna", "powozenie", "ujezdzanie", "bijatyka", "bronReczna", "rzucanie", "samochod", "motocykl", "ciezarowka", "kradziezKieszonkowa", "otwieranieZamkow", "zwinneDlonie", "pistolety", "karabiny", "bronMaszynowa", "luk", "kusza", "proca", "zastraszanie", "perswazja", "zdolnosciPrzywodcze", "postrzeganieEmocji", "blef", "opiekaNadZwierzetami", "odpornoscNaBol", "niezlomnosc", "morale", "pierwszaPomoc", "leczenieRan", "leczenieChorob", "mechanika", "elektronika", "komputery", "maszynyCiezkie", "wozyBojowe", "kutry", "rusznikarstwo", "wyrzutnie", "materialyWybuchowe", "wyczucieKierunku", "przygotowaniePulapki", "tropienie", "nasluchiwanie", "wypatrywanie", "czujnosc", "skradanieSie", "ukrywanieSie", "maskowanie", "lowiectwo", "znajomoscTerenu", "zdobywanieWody",].rngsus() 
 };
-export const tricksRoll = (props)=> {
+export const tricksRoll = (currentStats)=> {
     let chance = 9;
-    let tricksList = [
+    let tricksUnfiltered = [
     ["3,2,1 Bum", 				{mechanika: 3, materialyWybuchowe: 3}],
     ["Aramis", 				{zr: 14, bronReczna: 5}],
     ["Asekuracja",				{wspinaczka: 2}],
@@ -230,11 +230,26 @@ export const tricksRoll = (props)=> {
     ["Zły",					{zastraszanie: 4, ch: 12}],
     ["Zmyłka",				{bijatyka: 5, bronReczna: 5, sp: 12}], //Bijatyka lub reczna
     ["zelazne Racje",			{lowiectwo: 2}]];
+    let tricksList = [];
     let tricks = [];
+    filterTricks(currentStats)
     rollingChance();
     return tricks;
     
+function filterTricks(currentStats){
+  tricksUnfiltered.forEach(trick=>{
+      let pass=true;
+      
+    Object.keys(trick[1]).forEach(req=>{
+      (currentStats[req]>=trick[1][req]) ? pass=pass : pass = false; 
+    })
+    if(pass){tricksList.push(trick); console.log(trick);
+    }
+  })
+}
     function rollingChance(){
+    if(!tricksList){
+        return };
       if (Math.floor(((Math.random()*10)+1))<=chance){
         let trickLength;
         let trickIndex;
