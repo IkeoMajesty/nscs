@@ -234,6 +234,8 @@ export const tricksRoll = (currentStats)=> {
     let tricks = [];
     filterTricks(currentStats)
     rollingChance();
+    !tricks && (tricks=[])
+    console.log(tricks);
     return tricks;
     
 function filterTricks(currentStats){
@@ -247,7 +249,7 @@ function filterTricks(currentStats){
     }
   })
 }
-    function rollingChance(){
+function rollingChance(){
     if(!tricksList){
         return };
       if (Math.floor(((Math.random()*10)+1))<=chance){
@@ -256,28 +258,29 @@ function filterTricks(currentStats){
         switch (chance) {
           case 9:
             trickLength = tricksList.length;
-            trickIndex = (Math.floor(((Math.random()*trickLength)+1)))
+            trickIndex = (Math.floor(((Math.random()*trickLength))))
             tricks.push(tricksList[trickIndex]);
+            console.log(tricks);
             tricksList.splice(trickIndex, 1);
             chance = 6;
             break;
           case 6: 
             trickLength = tricksList.length;
-            trickIndex = (Math.floor(((Math.random()*trickLength)+1)))
+            trickIndex = (Math.floor(((Math.random()*trickLength))))
             tricks.push(tricksList[trickIndex]);
             tricksList.splice(trickIndex, 1);
             chance = 3;
             break;
           case 3: 
             trickLength = tricksList.length;
-            trickIndex = (Math.floor(((Math.random()*trickLength)+1)))
+            trickIndex = (Math.floor(((Math.random()*trickLength))))
             tricks.push(tricksList[trickIndex]);
             tricksList.splice(trickIndex, 1);
             chance = 1;
             break; 
           default: 
             trickLength = tricksList.length;
-            trickIndex = (Math.floor(((Math.random()*trickLength)+1)))
+            trickIndex = (Math.floor(((Math.random()*trickLength))))
             tricks.push(tricksList[trickIndex]);
             tricksList.splice(trickIndex, 1);
             chance = 1;
@@ -317,28 +320,28 @@ export const skillsRoll = (skillsFromProf)=> {
         switch (chance) {
           case 9:
             trickLength = skillsList.length;
-            trickIndex = (Math.floor(((Math.random()*trickLength)+1)))
+            trickIndex = (Math.floor(((Math.random()*trickLength))))
             skills.push(skillsList[trickIndex]);
             skillsList.splice(trickIndex, 1);
             chance = 6;
             break;
           case 6: 
             trickLength = skillsList.length;
-            trickIndex = (Math.floor(((Math.random()*trickLength)+1)))
+            trickIndex = (Math.floor(((Math.random()*trickLength))))
             skills.push(skillsList[trickIndex]);
             skillsList.splice(trickIndex, 1);
             chance = 3;
             break;
           case 3: 
             trickLength = skillsList.length;
-            trickIndex = (Math.floor(((Math.random()*trickLength)+1)))
+            trickIndex = (Math.floor(((Math.random()*trickLength))))
             skills.push(skillsList[trickIndex]);
             skillsList.splice(trickIndex, 1);
             chance = 1;
             break; 
           default: 
             trickLength = skillsList.length;
-            trickIndex = (Math.floor(((Math.random()*trickLength)+1)))
+            trickIndex = (Math.floor(((Math.random()*trickLength))))
             skills.push(skillsList[trickIndex]);
             skillsList.splice(trickIndex, 1);
             chance = 1;

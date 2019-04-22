@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-
 import './App.scss';
 import StatLine from "./StatLine.js";
 import Text from "./Text.js";
 import { skillDice, tricksRoll, gender, imionaM, imionaF, nazwiska, profesje, pochodzenia, wiek, wzrost, waga, oczy, wlosy, spec, choroba, d20avfrom3, skillsRoll } from "./Rngs.js";
 import SkillsGrid from './SkillsGrid.js'
-
+import Button from './Button.js'
+import Popup from "./Popup.js"
 
 
 
@@ -33,10 +33,24 @@ class App extends Component {
     },
     skills:{},
     tricks:[],
-
+    showinfo: false,
+    showRM: false,
+    showCred: false,
   }
   
-  
+  infoToggle = ()=>{
+    this.setState({showinfo: !this.state.showinfo, showRM: false, showCred: false})
+    
+    console.log("Info",this.state.showinfo);  
+  }
+  rmToggle = ()=>{
+    this.setState({showRM: !this.state.showRM, showinfo: false, showCred: false})
+    console.log("RM",this.state.showRM);
+  }
+  cToggle = ()=>{
+    this.setState({showCred: !this.state.showCred, showRM: false, showinfo: false})
+    console.log("Cred",this.state.showCred);
+  }
   rngMagicOld = ()=> {
     const genderOutcome = gender();
     const pro = profesje();
@@ -104,6 +118,7 @@ class App extends Component {
   const currentStats={...skillsFinal, ...statsFinal};
   // console.log(currentStats);
   let tricks = tricksRoll(currentStats);
+  
     this.setState({
       basic: {
         plec: genderOutcome.gender,
@@ -132,41 +147,55 @@ class App extends Component {
     
   };
   render() {
+    let popup = null;
+     if (this.state.showinfo) {
+       popup = (
+        <Popup text="info" close={this.infoToggle} />
+       );
+     }
+     if (this.state.showRM){
+      popup = (
+        <Popup text="rm" close={this.rmToggle} />
+       );
+     }
+     if (this.state.showCred){
+      popup = (
+        <Popup text='details' close={this.cToggle} />
+       );
+     }
+     const buttonclass = "buttonRng menuButton"
     return (
       <div>
-      
-      
-      
-       <div className="dataHeader">
-       <Text type="longText" name="Imie" id="imie" change={this.manualInput} value={this.state.basic.imie} /> 
-       <Text type="longText" name="Nazwisko" id="nazwisko" change={this.manualInput} value={this.state.basic.nazwisko} /> 
-       <Text type="longText" name="Pochodzenie" id="poch" change={this.manualInput} value={this.state.basic.poch}/> 
-       <Text type="longText" name="Profesja" id="pro" change={this.manualInput} value={this.state.basic.pro}/> 
-       </div>
-       <div className="dataHeader">
-       <Text type="shortText" name="Plec" id="plec" change={this.manualInput} value={this.state.basic.plec} />
-       <Text type="shortText" name="Wiek" id="wiek" change={this.manualInput} value={this.state.basic.wiek} /> 
-       <Text type="mediumText" name="Wzrost" id="wzrost" change={this.manualInput} value={this.state.basic.wzrost}/> 
-       <Text type="mediumText" name="Waga" id="waga" change={this.manualInput} value={this.state.basic.waga} /> 
-       <Text type="mediumText" name="Oczy" id="oczy" change={this.manualInput} value={this.state.basic.oczy} /> 
-       <Text type="mediumText" name="Wlosy" id="wlosy" change={this.manualInput} value={this.state.basic.wlosy} /> 
-       <Text type="mediumText" name="Spec." id="spec" change={this.manualInput}value={this.state.basic.spec}/> 
-       <Text type="longText" name="Choroba" id="choroba" change={this.manualInput} value={this.state.basic.choroba}/>
-       </div>
-       <h6 className="credits">Credits: Code and layout: Ikeo. Great help, inspiration and lot of manual work: Kamil "Kowboj" Miecielica! Thanks man!</h6>
-       <StatLine bu={this.state.basic.bu} zr={this.state.basic.zr} sp={this.state.basic.sp} pr={this.state.basic.pr} ch={this.state.basic.ch}/>
-       <div className="skillsGrid">
-       <SkillsGrid  skills={this.state.skills} />
-       <div className="tricks">
-       <h3>Sztuczki</h3>
-       {this.state.tricks.map(trick=>{
-         return (<li key={trick[0]}>{trick[0]}</li>)
-       })}
-       
-       </div>
-       <div className="buttonContainer"><button className="buttonRng" onClick={this.rngMagic}><h1>RNG!</h1></button></div>
-       </div>
-       
+        {popup}
+        <div className="navBar"><Button name="INFO" action={this.infoToggle}/><Button name="ROADMAP" action={this.rmToggle}/><Button name="DETAILS" action={this.cToggle}/><button className={buttonclass} onClick={this.rngMagic}>RNG!</button></div>
+        
+        <div className="dataHeader">
+          <Text type="longText" name="Imie" id="imie" change={this.manualInput} value={this.state.basic.imie} /> 
+          <Text type="longText" name="Nazwisko" id="nazwisko" change={this.manualInput} value={this.state.basic.nazwisko} /> 
+          <Text type="longText" name="Pochodzenie" id="poch" change={this.manualInput} value={this.state.basic.poch}/> 
+          <Text type="longText" name="Profesja" id="pro" change={this.manualInput} value={this.state.basic.pro}/> 
+        </div>
+        <div className="dataHeader">
+          <Text type="shortText" name="Plec" id="plec" change={this.manualInput} value={this.state.basic.plec} />
+          <Text type="shortText" name="Wiek" id="wiek" change={this.manualInput} value={this.state.basic.wiek} /> 
+          <Text type="mediumText" name="Wzrost" id="wzrost" change={this.manualInput} value={this.state.basic.wzrost}/> 
+          <Text type="mediumText" name="Waga" id="waga" change={this.manualInput} value={this.state.basic.waga} /> 
+          <Text type="mediumText" name="Oczy" id="oczy" change={this.manualInput} value={this.state.basic.oczy} /> 
+          <Text type="mediumText" name="Wlosy" id="wlosy" change={this.manualInput} value={this.state.basic.wlosy} /> 
+          <Text type="mediumText" name="Spec." id="spec" change={this.manualInput}value={this.state.basic.spec}/> 
+          <Text type="longText" name="Choroba" id="choroba" change={this.manualInput} value={this.state.basic.choroba}/>
+        </div>
+        
+        <StatLine bu={this.state.basic.bu} zr={this.state.basic.zr} sp={this.state.basic.sp} pr={this.state.basic.pr} ch={this.state.basic.ch}/>
+        <div className="skillsGrid">
+          <SkillsGrid  skills={this.state.skills} />
+        <div className="tricks">
+          <h3>Sztuczki</h3>
+          {this.state.tricks.map(trick=>{return (<li key={trick[0]}>{trick[0]}</li>)})}
+        </div>
+          <div className="buttonContainer"></div>
+        </div>
+        
       </div>
       
     );

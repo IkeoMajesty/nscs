@@ -19,25 +19,14 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .statyContenerZr{
   text-align: center;
   display: flexbox;
  
   width: 18vw;
-   
+  box-shadow: 1px 1px 10px #777777;
   padding: 5px;
   margin: 1vw;
   background-color: rgb(77, 224, 64);
@@ -48,8 +37,8 @@
   display: flexbox;
  
   width: 18vw;
-   
-  padding: 5px;
+  box-shadow: 1px 1px 10px #777777;
+    padding: 5px;
   margin: 1vw;
   background-color: tomato;
   border: 2px solid black;
@@ -59,7 +48,7 @@
   display: flexbox;
  
   width: 18vw;
-   
+  box-shadow: 1px 1px 10px #777777;
   padding: 5px;
   margin: 1vw;
   background-color: rgb(82, 162, 236);
@@ -70,7 +59,7 @@
   display: flexbox;
  
   width: 18vw;
-   
+  box-shadow: 1px 1px 10px #777777;
   padding: 5px;
   margin: 1vw;
   background-color: #f18e0b;
@@ -79,7 +68,7 @@
 .statyContenerCh{
   text-align: center;
   display: flexbox;
- 
+  box-shadow: 1px 1px 10px #777777;
   width: 18vw;
    
   padding: 5px;
@@ -99,11 +88,12 @@
   margin: 1px;
   background-color: #f6e0b3;
   border: 1px solid black;
+  box-shadow: 1px 1px 10px #777777;
 }
 .skillContenerTZr{
   text-align: center;
   display: flexbox;
-  
+  box-shadow: 1px 1px 10px #777777;
   height: 30px;
   width: 150px;
   padding: 1px;
@@ -114,7 +104,7 @@
 .skillContenerTBu{
   text-align: center;
   display: flexbox;
-  
+  box-shadow: 1px 1px 10px #777777;
   height: 30px;
   width: 150px;
   padding: 1px;
@@ -125,7 +115,7 @@
 .skillContenerTPr{
   text-align: center;
   display: flexbox;
-  
+  box-shadow: 1px 1px 10px #777777;
   height: 30px;
   width: 150px;
   padding: 1px;
@@ -136,7 +126,7 @@
 .skillContenerTSp{
   text-align: center;
   display: flexbox;
-  
+  box-shadow: 1px 1px 10px #777777;
   height: 30px;
   width: 150px;
   padding: 1px;
@@ -147,7 +137,7 @@
 .skillContenerTCh{
   text-align: center;
   display: flexbox;
-  
+  box-shadow: 1px 1px 10px #777777;
   height: 30px;
   width: 150px;
   padding: 1px;
@@ -201,15 +191,15 @@
 }
 
 .buttonRng{
-  width: 300px;
-  height: 300px;
-  margin-top: 0;
+  width: 100px;
+  height: 50px;
+ 
   
-  
+  font-weight: bold;
   background-color: red;
   color: aliceblue;
-  font-weight: bolder;
-  border: 2px solid black;
+  
+  
 
 }
 
@@ -225,7 +215,7 @@
   margin-bottom: 30px;
   border: 2px solid black;
   text-align: center;
-
+  box-shadow: 1px 1px 10px #777777;
 }
 h6{
   text-align: center;
@@ -235,3 +225,54 @@ h6{
 .buttonContainer{
   padding:50px;
 }
+.popupFullscreen{
+  margin-top: 3vh;
+  margin-left: 3vw;
+  height: 94vh;
+  width: 94vw;
+  border: 0px solid #282c34;
+  background-color: aliceblue;
+  z-index: 10;
+  position: absolute;
+  opacity: 0.98;
+  padding: 20px;
+  box-shadow: 5px 5px 50px 5px #777777;
+}
+button{
+  display: inline-block;
+    padding: 10px;
+    background-color: rgb(83, 83, 83);
+    text-decoration: none;
+    color: white;
+    
+}
+
+.menuButton {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+  }
+  .menuButton:hover,
+  .menuButton:focus,
+  .menuButton:active {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  navBar{
+    padding: 5px;
+    
+  }
+
+  input{
+    box-shadow: inset 0 0 5px #b8b8b8;
+    border-radius: 5px;
+  }
+  
