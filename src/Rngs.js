@@ -92,10 +92,21 @@ export const choroba = (props)=> {
     return ["Zapalenie płuc", "Gorączka SN", "PGK", "Mount Rushmore", "Syndrom Obcego", "Chore Nery", "Alergie", "Szaleństwo Bostońskie", "Syndrom Thurmana", "Drgawki", "Drętwota Hollywood", "Osteoporoza", "Zawroty Głowy", "Niewydolność krązenia", "Anemia", "Morbus Dexteri", "Syndrom Draculi", "VTDS", "Zdrowy"].rngsus()
 };
 export const d20avfrom3 = (props)=> {
-    const d201 = Math.floor(((Math.random()*15)+6));
-    const d202 = Math.floor(((Math.random()*15)+6));
-    const d203 = Math.floor(((Math.random()*15)+6));
-    return (Math.floor((d201+d202+d203)/3))
+    const rollForStats = () => {
+      const roll = Math.floor(((Math.floor(Math.random()*20)+1)+(Math.floor(Math.random()*20)+1)+(Math.floor(Math.random()*20)+1))/3);
+      console.log(roll);
+      
+      if (roll >= 6){
+        return roll;
+      }else{
+        rollForStats();
+      }
+    }
+    return rollForStats();
+    // const d201 = Math.floor(((Math.random()*15)+6));
+    // const d202 = Math.floor(((Math.random()*15)+6));
+    // const d203 = Math.floor(((Math.random()*15)+6));
+    // return (Math.floor((d201+d202+d203)/3))
 };
 export const skillsList = (props) => {
     return ["kondycja", "plywanie","wspinaczka", "jazdaKonna", "powozenie", "ujezdzanie", "bijatyka", "bronReczna", "rzucanie", "samochod", "motocykl", "ciezarowka", "kradziezKieszonkowa", "otwieranieZamkow", "zwinneDlonie", "pistolety", "karabiny", "bronMaszynowa", "luk", "kusza", "proca", "zastraszanie", "perswazja", "zdolnosciPrzywodcze", "postrzeganieEmocji", "blef", "opiekaNadZwierzetami", "odpornoscNaBol", "niezlomnosc", "morale", "pierwszaPomoc", "leczenieRan", "leczenieChorob", "mechanika", "elektronika", "komputery", "maszynyCiezkie", "wozyBojowe", "kutry", "rusznikarstwo", "wyrzutnie", "materialyWybuchowe", "wyczucieKierunku", "przygotowaniePulapki", "tropienie", "nasluchiwanie", "wypatrywanie", "czujnosc", "skradanieSie", "ukrywanieSie", "maskowanie", "lowiectwo", "znajomoscTerenu", "zdobywanieWody",].rngsus() 
