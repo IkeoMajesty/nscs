@@ -245,7 +245,8 @@ function filterTricks(currentStats){
     Object.keys(trick[1]).forEach(req=>{
       (currentStats[req]>=trick[1][req]) ? pass=pass : pass = false; 
     })
-    if(pass){tricksList.push(trick); console.log(trick);
+    if(pass){tricksList.push(trick); 
+      
     }
   })
 }
@@ -260,7 +261,7 @@ function rollingChance(){
             trickLength = tricksList.length;
             trickIndex = (Math.floor(((Math.random()*trickLength))))
             tricks.push(tricksList[trickIndex]);
-            console.log(tricks);
+            // console.log(tricks);
             tricksList.splice(trickIndex, 1);
             chance = 6;
             break;
