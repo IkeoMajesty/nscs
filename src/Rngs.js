@@ -350,7 +350,7 @@ export const skillsRoll = (skillsFromProf)=> {
         rollingChance();
     }else{
      
-      console.log("Skills added randomly:",skills);
+      // console.log("Skills added randomly:",skills);
       
       
     }

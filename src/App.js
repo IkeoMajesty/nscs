@@ -89,7 +89,7 @@ class App extends Component {
   let priorityStat1 = profesja[1];
   let priorityStat2 = profesja[2];
   let sixRolls = [d20avfrom3(),d20avfrom3(),d20avfrom3(),d20avfrom3(),d20avfrom3(),d20avfrom3()];
-  // console.log("First Roll:",sixRolls);
+  console.log("First Roll:",sixRolls);
   sixRolls.sort(function(a, b){return b-a});
   sixRolls.pop();
   let priorityRoll1= sixRolls.shift();
