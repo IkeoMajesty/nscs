@@ -330,3 +330,16 @@ const filterTricks = (currentStats){
   })
 }
 
+
+
+
+
+const roll = () => {
+
+  const dice = Math.floor((Math.random()*20)+1)
+  if (dice < 6){
+    dice = 6
+  }
+  return dice;
+
+}

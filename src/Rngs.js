@@ -29,7 +29,7 @@ export const profesje = (props)=> {
     ["Łowca mutantów", "zr", "bu", ["bronReczna", "karabiny", "tropienie", "przygotowaniePulapki", "skradanieSie", "ukrywanieSie", "czujnosc", "maskowanie", "lowiectwo"]],
     ["Mafiozo", "ch", "sp", ["zastraszanie", "perswazja", "blef", "niezlomnosc", "pistolety", "postrzeganieEmocji", "elektronika" ]],
     ["Medyk", "sp", "pr", ["pierwszaPomoc", "leczenieRan", "leczenieChorob", "czujnosc", "odpornoscNaBol", "morale", "wypatrywanie" ]],
-    ["Monter", "sp", "pr", ["komputery", "elektronika", "mechanika", "samochody", "ciezarowki", "matematyka", "fizyka" ]],
+    ["Monter", "sp", "pr", ["komputery", "elektronika", "mechanika", "samochod", "ciezarowki", "matematyka", "fizyka" ]],
     ["Najemnik", "zr", "bu", ["karabiny", "bronReczna", "kondycja", "odpornoscNaBol", "niezlomnosc", "samochod", "plywanie" ]],
     ["Ochroniarz", "bu", "zr", ["kondycja", "bijatyka", "bronReczna", "pistolety", "niezlomnosc", "odpornoscNaBol", "czujnosc" ]],
     ["Sędzia", "ch", "zr", ["postrzeganieEmocji", "perswazja", "karabiny", "zdolnosciPrzywodcze", "morale", "zastraszanie", "pistolety"]],
@@ -38,7 +38,7 @@ export const profesje = (props)=> {
     ["Szczur", "pr", "sp", ["znajomoscTerenu", "maskowanie", "ukrywanieSie", "czujnosc", "wyczucieKierunku", "perswazja", "niezlomnosc" ]],
     ["Treser bestii", "ch", "zr", ["opiekaNadZwierzetami", "perswazja", "pistolety", "niezlomnosc", "zastraszanie", "bijatyka", "odpornoscNaBol" ]],
     ["Tropiciel", "pr", "zr", ["tropienie", "karabiny", "wyczucieKierunku", "znajomoscTerenu", "bronReczna", "skradanieSie", "przygotowaniePulapek" ]],
-    ["Wojownik autostrady", "zr", "bu", ["samochody", "pistolety", "morale", "rzucanie", "niezlomnosc", "zastraszanie", "kondycja" ]],
+    ["Wojownik autostrady", "zr", "bu", ["samochod", "pistolety", "morale", "rzucanie", "niezlomnosc", "zastraszanie", "kondycja" ]],
     ["Wojownik klanu", "bu", "zr", ["kondycja", "bronReczna", "wspinaczka", "niezlomnosc", "bijatyka", "rzucanie", "luk" ]],
     ["Zabójca", "zr", "sp", ["bronReczna", "pistolety", "skradanieSie", "maskowanie", "morale", "czujnosc", "niezlomnosc" ]],
     ["Zabójca maszyn", "zr", "sp", ["karabiny", "rzucanie", "elektronika", "komputery", "ciezarowki", "matematyka", "maszynyCiezkie"]],
@@ -92,17 +92,13 @@ export const choroba = (props)=> {
     return ["Zapalenie płuc", "Gorączka SN", "PGK", "Mount Rushmore", "Syndrom Obcego", "Chore Nery", "Alergie", "Szaleństwo Bostońskie", "Syndrom Thurmana", "Drgawki", "Drętwota Hollywood", "Osteoporoza", "Zawroty Głowy", "Niewydolność krązenia", "Anemia", "Morbus Dexteri", "Syndrom Draculi", "VTDS", "Zdrowy"].rngsus()
 };
 export const d20avfrom3 = (props)=> {
-    const rollForStats = () => {
-      const roll = Math.floor(((Math.floor(Math.random()*20)+1)+(Math.floor(Math.random()*20)+1)+(Math.floor(Math.random()*20)+1))/3);
-      console.log(roll);
-      
-      if (roll >= 6){
-        return roll;
-      }else{
-        rollForStats();
-      }
-    }
-    return rollForStats();
+  const roll = () => {
+    let dice = Math.floor((Math.random()*20)+1)
+    if (dice < 6){dice = 6}
+    return dice;
+  };
+  return Math.floor((roll()+roll()+roll())/3)
+
     // const d201 = Math.floor(((Math.random()*15)+6));
     // const d202 = Math.floor(((Math.random()*15)+6));
     // const d203 = Math.floor(((Math.random()*15)+6));
@@ -246,7 +242,7 @@ export const tricksRoll = (currentStats)=> {
     filterTricks(currentStats)
     rollingChance();
     !tricks && (tricks=[])
-    console.log(tricks);
+    // console.log(tricks);
     return tricks;
     
 function filterTricks(currentStats){
