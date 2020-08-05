@@ -4,7 +4,7 @@ const staty = (props)=> {
 
     return (
         <div className={props.styleP}>
-         <h3>  {props.name}: <input className="statInput" defaultValue={props.value} />  </h3>
+         <h3 className="statText">  {props.name}: <input className="statInput" defaultValue={props.value} />  </h3>
         </div>
     )}
 
